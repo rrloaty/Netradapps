@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Netradapps — Wallet Dashboard</title>
+
+  <!-- Font Awesome CDN for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+
+  <!-- Ethers.js (for wallet connect & basic on-chain calls) -->
+  <script src="https://cdn.jsdelivr.net/npm/ethers@6.8.0/dist/ethers.umd.min.js"></script>
+  <!-- Web3Modal v2 (WalletConnect & more) CDN (light integration) -->
+  <script src="https://unpkg.com/@walletconnect/web3modal@2.6.9/dist/index.umd.js"></script>
+  <script src="https://unpkg.com/@web3modal/standalone@2.1.0/dist/index.umd.js"></script>
+
+  <style>
+    :root{
+      --bg:#061125; --panel:#0d1624; --muted:#9fb0c9; --accent:#18d884; --glass: rgba(255,255,255,0.03);
+      --card-shadow: 0 8px 26px rgba(2,8,23,0.7);
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,#031022 0%, #07162a 100%);color:#e8f3ff}
+    .wrap{max-width:420px;margin:18px auto;padding:16px}
+    header{display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,#12b886,#15a0ff);display:flex;align-items:center;justify-content:center;font-weight:800;color:#001313}
+    h1{font-size:18px;margin:0}
+    .addr{font-size:12px;color:var(--muted)}
+
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:14px;padding:14px;margin-top:14px;box-shadow:var(--card-shadow)}
+    .balance-row{display:flex;align-items:center;justify-content:space-between}
+    .balance-left{display:flex;flex-direction:column;gap:6px}
+    .fiat{font-size:26px;font-weight:700}
+    .crypto{font-size:13px;color:var(--muted)}
+    .small{font-size:12px;color:var(--muted)}
+
+    .actions{display:flex;gap:8px;margin-top:12px}
+    .btn{flex:1;padding:10px;border-radius:10px;text-align:center;cursor:pointer;border:1px solid rgba(255,255,255,0.04);background:var(--glass);color:inherit}
+    .btn.primary{background:linear-gradient(90deg,var(--accent),#21a7ff);color:#031414;font-weight:700;border:none}
+    .btn.ghost{background:transparent;color:var(--muted)}
+
+    .tokens{margin-top:12px}
+    .token{display:flex;align-items:center;gap:12px;padding:10px;border-radius:10px;margin-bottom:8px;background:rgba(255,255,255,0.012);border:1px solid rgba(255,255,255,0.02)}
+    .token .icon{width:46px;height:46px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:#071728}
+    .token .meta{flex:1}
+    .token .meta .name{font-weight:700}
+    .token .meta .sub{font-size:12px;color:var(--muted)}
+    .token .value{text-align:right}
+    nav.bottom{display:flex;gap:8px;margin-top:14px}
+    nav .tab{flex:1;padding:10px;border-radius:10px;background:rgba(255,255,255,0.01);text-align:center;color:var(--muted);font-size:13px}
+    nav .tab.active{background:linear-gradient(90deg,var(--accent),#21a7ff);color:#031414;font-weight:700}
+
+    /* modal */
+    .modal{position:fixed;left:0;top:0;right:0;bottom:0;display:none;align-items:center;justify-content:center;background:rgba(1,6,12,0.6);z-index:50}
+    .sheet{width:92%;max-width:420px;background:var(--panel);padding:14px;border-radius:12px}
+    input,select{width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;margin-top:8px}
+
+    .foot-note{margin-top:18px;font-size:12px;color:var(--muted);text-align:center}
+
+    @media (max-width:460px){.wrap{padding:12px}}
+  </style>
+</head>
+<body>
+  <div class="wrap" id="app">
+    <header>
+      <div class="brand">
+        <div class="logo">ND</div>
+        <div>
+          <h1>Netradapps</h1>
+          <div class="addr" id="addrPreview">Main Dashboard</div>
+        </div>
+      </div>
+
+      <div style="text-align:right">
+        <div style="display:flex;gap:8px;align-items:center">
+          <button class="btn" id="connectBtn"><i class="fa-solid fa-wallet"></i> Connect</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Balance Card -->
+    <section class="card">
+      <div class="balance-row">
+        <div class="balance-left">
+          <div class="fiat" id="fiatBalance">$1,048.00</div>
+          <div class="crypto" id="cryptoBalance">1,048.00 USDT</div>
+        </div>
+        <div style="text-align:right">
+          <div class="small">Portfolio</div>
+          <div style="color:var(--accent);font-weight:700" id="changePct">+3.8%</div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <div class="btn primary" id="sendBtn"><i class="fa-solid fa-paper-plane"></i> Send</div>
+        <div class="btn" id="receiveBtn"><i class="fa-solid fa-arrow-down-left"></i> Receive</div>
+        <div class="btn ghost" id="buyBtn"><i class="fa-solid fa-bag-shopping"></i> Buy</div>
+      </div>
+
+      <div id="miniChart" style="height:86px;border-radius:10px;margin-top:12px;background:linear-gradient(90deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));display:flex;align-items:center;justify-content:center;color:var(--muted)">
+        Price chart placeholder
+      </div>
+    </section>
+
+    <!-- Token list -->
+    <section class="tokens">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
+        <div style="font-weight:700">Tokens</div>
+        <div class="small" id="tokenCount">5</div>
+      </div>
+
+      <!-- USDT (default $1,048) -->
+      <div class="token" data-symbol="USDT" id="token-USDT">
+        <div class="icon"><img src="te.png" alt="" style="width:34px;height:34px"></div>
+        <div class="meta">
+          <div class="name">Tron (USDT)</div>
+          <div class="sub">ERC-20 · Stablecoin</div>
+        </div>
+        <div class="value">
+          <div style="font-weight:700" id="usdtBalance">1,048.00</div>
+          <div class="small" id="usdtUSD">$1,048.00</div>
+        </div>
+      </div>
+
+      <!-- BTC (demo) -->
+      <div class="token" data-symbol="BTC">
+        <div class="icon"><img src="bit.png" alt="" style="width:34px;height:34px"></div>
+        <div class="meta">
+          <div class="name">Bitcoin (BTC)</div>
+          <div class="sub">balance</div>
+        </div>
+        <div class="value">
+          <div style="font-weight:700">0.012</div>
+          <div class="small">$830.00</div>
+        </div>
+      </div>
+
+      <!-- ETH (demo) -->
+      <div class="token" data-symbol="ETH" id="token-ETH">
+        <div class="icon"><img src="eth.png" alt="" style="width:34px;height:34px"></div>
+        <div class="meta">
+          <div class="name">Ethereum (ETH)</div>
+          <div class="sub"> balance</div>
+        </div>
+        <div class="value">
+          <div style="font-weight:700" id="ethDisplay">0.012</div>
+          <div class="small" id="ethUsd">$35.30</div>
+        </div>
+      </div>
+
+      <!-- BNB (demo) -->
+      <div class="token" data-symbol="BNB">
+        <div class="icon">BNB</div>
+        <div class="meta">
+          <div class="name">BNB</div>
+          <div class="sub">BNB Chain</div>
+        </div>
+        <div class="value">
+          <div style="font-weight:700">0.215</div>
+          <div class="small">$58.20</div>
+        </div>
+      </div>
+
+      <!-- ADA (demo) -->
+      <div class="token" data-symbol="ADA">
+        <div class="icon">ADA</div>
+        <div class="meta">
+          <div class="name">Cardano (ADA)</div>
+          <div class="sub">balance</div>
+        </div>
+        <div class="value">
+          <div style="font-weight:700">34</div>
+          <div class="small">$24.00</div>
+        </div>
+      </div>
+    </section>
+
+    <nav class="bottom">
+      <div class="tab active">Wallet</div>
+      <div class="tab">Market</div>
+      <div class="tab">Swap</div>
+      <div class="tab">Settings</div>
+    </nav>
+  <!-- Modals: Receive & Send (simple) -->
+  <div class="modal" id="receiveModal">
+    <div class="sheet">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div style="font-weight:700">Receive</div>
+        <div style="cursor:pointer;color:var(--muted)" id="closeReceive">✕</div>
+      </div>
+      <p class="small">Share this address to receive tokens.</p>
+      <div style="display:flex;gap:12px;align-items:center">
+        <div style="width:120px;height:120px;border-radius:8px;background:#071425;display:flex;align-items:center;justify-content:center" id="qrBox">QR</div>
+        <div style="flex:1">
+          <input type="text" id="receiveAddress" readonly value="0xDress000000000000000000000000000"/>
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <div class="btn" id="copyRecv">Copy</div>
+            <div class="btn primary" id="shareRecv">Share</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="sendModal">
+    <div class="sheet">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div style="font-weight:700">Send</div>
+        <div style="cursor:pointer;color:var(--muted)" id="closeSend">✕</div>
+      </div>
+      <p class="small">This Wallet will simulate a send (it will update UI balances locally).</p>
+      <input id="sendTo" placeholder="Recipient address (0x...)"/>
+      <input id="sendAmount" type="number" step="0.01" placeholder="Amount (USDT)"/>
+      <div style="display:flex;gap:8px;margin-top:10px">
+        <div class="btn" id="cancelSend">Cancel</div>
+        <div class="btn primary" id="confirmSend">Confirm</div>
+      </div>
+    </div>
+  </div>
+
+<script>
+/* ------------------------
+  Simple Dashboard behavior
+   - Default USDT = $1,048 (demo)
+   - Connect Wallet: tries MetaMask (window.ethereum). If available, shows address and ETH balance.
+   - Also basic WalletConnect via Web3Modal if MetaMask not available (light fallback).
+   - Send UI: simulates send by decreasing demo USDT (updates visible values).
+------------------------ */
+
+const DEFAULT_USDT = 206748.00;
+let demoUsdt = DEFAULT_USDT;
+let provider = null;
+let signer = null;
+let connectedAddress = null;
+
+// Elements
+const connectBtn = document.getElementById('connectBtn');
+const addrPreview = document.getElementById('addrPreview');
+const fiatBalance = document.getElementById('fiatBalance');
+const cryptoBalance = document.getElementById('cryptoBalance');
+const usdtBalanceEl = document.getElementById('usdtBalance');
+const usdtUsdEl = document.getElementById('usdtUSD');
+const ethDisplay = document.getElementById('ethDisplay');
+const ethUsd = document.getElementById('ethUsd');
+
+// Init display
+function renderBalances() {
+  fiatBalance.textContent = '$' + demoUsdt.toFixed(2);
+  cryptoBalance.textContent = demoUsdt.toFixed(2) + ' USDT';
+  usdtBalanceEl.textContent = demoUsdt.toFixed(2);
+  usdtUsdEl.textContent = '$' + demoUsdt.toFixed(2);
+}
+renderBalances();
+
+/* ---------- Wallet Connection ---------- */
+
+async function connectMetaMask() {
+  try {
+    if (!window.ethereum) throw new Error('MetaMask / injected provider not found');
+    provider = new ethers.BrowserProvider(window.ethereum);
+    // request accounts
+    await provider.send("eth_requestAccounts", []);
+    signer = await provider.getSigner();
+    connectedAddress = await signer.getAddress();
+    addrPreview.textContent = connectedAddress.slice(0,6) + '...' + connectedAddress.slice(-4);
+    connectBtn.textContent = 'Connected';
+    connectBtn.classList.add('primary');
+    // fetch native balance (ETH) and show
+    const bal = await provider.getBalance(connectedAddress);
+    // ethers BigInt -> float ETH
+    const eth = Number(ethers.formatEther(bal));
+    ethDisplay.textContent = eth.toFixed(6);
+    // show approximate USD (demo rate 3000 USD/ETH)
+    const approx = (eth * 3000).toFixed(2);
+    ethUsd.textContent = '$' + approx;
+    // set receive address to real address
+    document.getElementById('receiveAddress').value = connectedAddress;
+    // generate QR using google chart API (simple)
+    try {
+      const qrBox = document.getElementById('qrBox');
+      qrBox.innerHTML = '';
+      const img = document.createElement('img');
+      img.src = 'https://chart.googleapis.com/chart?cht=qr&chs=200x200&chl=' + encodeURIComponent(connectedAddress);
+      img.style.width = '100%'; img.style.height='100%'; img.style.objectFit='cover'; img.style.borderRadius='6px';
+      qrBox.appendChild(img);
+    } catch(e){/*ignore*/}
+
+  } catch (err) {
+    console.warn('MetaMask connect failed:', err);
+    // fallback: try Web3Modal walletconnect
+    try {
+      await connectWalletConnect();
+    } catch(e){
+      alert('No web3 provider found.');
+    }
+  }
+}
+
+/* Very light Web3Modal + WalletConnect fallback */
+async function connectWalletConnect() {
+  // Using web3modal v2 standalone (script CDN included above).
+  // Build a basic modal that allows WalletConnect; this is a minimal example.
+  try {
+    const modal = new window.Web3Modal({
+      projectId: 'demo', // NOTE: for production you should register & use a real projectId (WalletConnect v2)
+      walletConnectVersion: 2
+    });
+    const instance = await modal.connect();
+    provider = new ethers.BrowserProvider(instance);
+    signer = await provider.getSigner();
+    connectedAddress = await signer.getAddress();
+    addrPreview.textContent = connectedAddress.slice(0,6) + '...' + connectedAddress.slice(-4);
+    connectBtn.textContent = 'Connected';
+    connectBtn.classList.add('primary');
+  } catch (e) {
+    console.warn('Web3Modal connect failed:', e);
+    throw e;
+  }
+}
+
+connectBtn.addEventListener('click', async () => {
+  if (!connectedAddress) {
+    await connectMetaMask();
+  } else {
+    // If already connected, open a small menu (simple)
+    const wantDisconnect = confirm('Disconnect wallet?');
+    if (wantDisconnect) {
+      connectedAddress = null;
+      provider = null;
+      signer = null;
+      addrPreview.textContent = 'Demo mode';
+      connectBtn.textContent = 'Connect';
+      connectBtn.classList.remove('primary');
+      // revert receive address & QR to demo
+      document.getElementById('receiveAddress').value = '0xG73800Gsu678000000';
+      document.getElementById('qrBox').textContent = 'QR';
+      ethDisplay.textContent = '—';
+      ethUsd.textContent = '—';
+    }
+  }
+});
+
+/* ---------- Send / Receive modals (demo) ---------- */
+const receiveModal = document.getElementById('receiveModal');
+const sendModal = document.getElementById('sendModal');
+
+document.getElementById('receiveBtn').addEventListener('click', ()=> receiveModal.style.display = 'flex');
+document.getElementById('closeReceive').addEventListener('click', ()=> receiveModal.style.display = 'none');
+document.getElementById('copyRecv').addEventListener('click', async ()=>{
+  const v = document.getElementById('receiveAddress').value;
+  try { await navigator.clipboard.writeText(v); alert('Address copied'); } catch(e){ prompt('Copy address', v); }
+});
+document.getElementById('shareRecv').addEventListener('click', ()=> { alert('Share via OS share not implemented in demo'); });
+
+document.getElementById('sendBtn').addEventListener('click', ()=> sendModal.style.display = 'flex');
+document.getElementById('closeSend').addEventListener('click', ()=> sendModal.style.display = 'none');
+document.getElementById('cancelSend').addEventListener('click', ()=> sendModal.style.display = 'none');
+
+document.getElementById('confirmSend').addEventListener('click', ()=>{
+  const to = document.getElementById('sendTo').value.trim();
+  const amt = parseFloat(document.getElementById('sendAmount').value || '0');
+  if (!to || !amt || amt <= 0) { alert('Enter recipient and valid amount'); return; }
+  if (amt > demoUsdt) { alert('USDT balance'); return; }
+  demoUsdt = +(demoUsdt - amt).toFixed(2);
+  renderBalances();
+  sendModal.style.display = 'none';
+  alert(`You've Sent ${amt} USDT to ${to} (UI updated only)`);
+});
+
+/* Close modals on background click */
+document.querySelectorAll('.modal').forEach(m => m.addEventListener('click', e => {
+  if (e.target === m) m.style.display = 'none';
+}));
+
+/* Small UX: tab switching */
+document.querySelectorAll('nav .tab').forEach((t,i)=>{
+  t.addEventListener('click', ()=> {
+    document.querySelectorAll('nav .tab').forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+    // simple placeholders
+    if(i===1) 
+    if(i===2) alert('Swap placeholder — coming soon');
+    if(i===3) alert('Settings');
+  });
+});
+
+/* Optional: attempt to auto-connect if MetaMask already available */
+(async ()=>{
+  if (window.ethereum && window.ethereum.selectedAddress) {
+    try { await connectMetaMask(); } catch(e) { /*ignore*/ }
+  }
+})();
+</script>
+</body>
+</html>

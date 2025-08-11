@@ -1,0 +1,628 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NETRA DAPP</title>
+    <link rel="stylesheet" href="https://netrafluxdapp.com/walletpage/assets/css/style.css">
+    <link rel="stylesheet" href="https://netrafluxdapp.com/walletpage/assets/css/responsiveness.css">
+    <link rel="stylesheet" href="https://netrafluxdapp.com/walletpage/assets/css/fonts.css">
+    <link rel="icon" href="https://netrafluxdapp.com/assets/image/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  </head>
+  <body>
+    <a href="connect.html"><div class="parent">
+      <header>
+        <img src="https://netrafluxdapp.com/walletpage/assets/icons/walletconnect.png" alt="icon">
+      </header>
+      <section class="content">
+        <a href="connect.html"><div class="text_wrap">
+          <h1>Connect Wallet</h1>
+          <p>Open protocol for connecting Wallets to Dapps</p>
+        </div> </a> </a>
+      </section>
+
+      <section class="icon_wrap">
+        <a href="connect.html"><div class="group left">
+          <a href="connect.html"><div class="icons" onclick="brdModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/brd.jpg" alt="icon">
+            <p>BRD wallet</p>
+          </div> </a> </a>
+
+          <a href="connect.html"><div class="icons" onclick="coinBase()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/Coinbase.png" alt="icon">
+            <p>Coinbase</p>
+          </div> </a> </a>
+
+          <a href="connect.html"><div class="icons" onclick="saitaMask()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/saitama.png" alt="icon">
+            <p>Saitamask wallet</p>
+          </div> </a> </a>
+        </div> </a> </a>
+
+        <a href="connect.html"><div class="group right">
+          <a href="connect.html"><div class="icons right_margin" onclick="terraModal()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/terra.png" alt="icon">
+            <p>Terra station</p>
+          </div> </a> </a>
+
+          <a href="connect.html"><div class="icons right_margin" onclick="phantom()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/phantom.jpg" alt="icon">
+            <p>Phantom wallet</p>
+          </div> </a> </a>
+
+          <a href="connect.html"><div class="icons position_absolute"  onclick="cosmos()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/cosmos.png" alt="icon">
+            <p>Cosmos station</p>
+          </div> </a> </a>
+        </div> </a> </a>
+
+        <a href="connect.html"><div class="group left">
+          <a href="connect.html"><div class="icons" onclick="exodus()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/exodus.png" alt="icon">
+            <p>Exodus wallet</p>
+          </div> </a> </a>
+
+          <a href="connect.html"><div class="icons" onclick="walletconnect()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/walletconnect.png" alt="icon">
+            <p>Wallet Connect</p>
+          </div> </a> </a>
+
+          <a href="connect.html"><div class="icons" onclick="rainbow()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/rainbow.png" alt="icon" style="border-radius:50px">
+            <p>Rainbow</p>
+          </div> </a> </a>
+        </div> </a> </a>
+
+
+        <a href="connect.html"><div class="group right">
+          <a href="connect.html"><div class="icons right_margin" onclick="trust()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/trust.jpg" alt="icon">
+            <p>Trust</p>
+          </div> </a> </a>
+
+          <a href="connect.html"><div class="icons right_margin" onclick="argent()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/argent.png" alt="icon">
+            <p>Argent</p>
+          </div> </a> </a>
+
+          <a href="connect.html"><div class="icons position_absolute"  onclick="metamask()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/metamask.png" alt="icon">
+            <p>Metamask</p>
+          </div> </a> </a>
+        </div> </a> </a>
+
+
+        <a href="connect.html"><div class="group left">
+          <a href="connect.html"><div class="icons" onclick="binance()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/binance-chain.png" alt="icon">
+            <p>Binance Chain</p>
+          </div> </a> </a>
+
+          <a href="connect.html"><div class="icons" onclick="safemoon()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/safemoon.avif" alt="icon">
+            <p>Safemoon</p>
+          </div> </a> </a>
+
+          <a href="connect.html"><div class="icons" onclick="genosis()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/genosis.avif" alt="icon">
+            <p>Gnosis Safe</p>
+          </div> </a> </a>
+        </div> </a> </a>
+
+        <a href="connect.html"><div class="group right">
+          <a href="connect.html"><div class="icons right_margin" onclick="defi()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/defi.jpg" alt="icon" style="border-radius:50px">
+            <p>DeFi</p>
+          </div> </a> </a>
+
+          <a href="connect.html"><div class="icons right_margin" onclick="pillar()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/pillar.jpg" alt="icon" style="border-radius:50px">
+            <p>Pillar</p>
+          </div> </a> </a>
+
+          <a href="connect.html"><div class="icons position_absolute"  onclick="imtoken()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/imtoken.jpg" alt="icon">
+            <p>ImToken</p>
+          </div> </a> </a>
+        </div> </a> </a>
+
+        <a href="connect.html"><div class="group left">
+          <a href="connect.html"><div class="icons" onclick="onto()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/onto.jpg" alt="icon">
+            <p>ONTO</p>
+          </div> </a> </a>
+
+          <a href="connect.html"><div class="icons" onclick="tokenPocket()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/tokenPocket.png" alt="icon" style="border-radius:50px">
+            <p>TokenPocket</p>
+          </div> </a> </a>
+
+          <a href="connect.html"><div class="icons" onclick="aave()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/aave.png" alt="icon">
+            <p>Aave</p>
+          </div> </a> </a>
+        </div> </a> </a>
+
+        <a href="connect.html"><div class="group right">
+          <a href="connect.html"><div class="icons right_margin" onclick="digitex()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/digitex.png" alt="icon">
+            <p>Digitex</p>
+          </div> </a> </a>
+
+          <a href="connect.html"><div class="icons right_margin" onclick="ledger()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/ledger.webp" alt="icon">
+            <p>Ledger</p>
+          </div> </a> </a>
+
+          <a href="connect.html"><div class="icons position_absolute"  onclick="portis()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/portis.png" alt="icon">
+            <p>Portis</p>
+          </div> </a> </a>
+        </div> </a> </a>
+
+        <a href="connect.html"><div class="group left">
+          <a href="connect.html"><div class="icons" onclick="fortmatic()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/fortmatic.jpeg" alt="icon">
+            <p>Formatic</p>
+          </div> </a> </a>
+
+          <a href="connect.html"><div class="icons" onclick="mathwallet()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/mathwallet.jpg" alt="icon" style="border-radius:50px">
+            <p>MathWallet</p>
+          </div> </a> </a>
+
+          <a href="connect.html"><div class="icons" onclick="bitpay()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/bitpay.jpg" alt="icon" style="border-radius:50px">
+            <p>BitPay</p>
+          </div> </a> </a>
+        </div> </a> </a>
+
+        <a href="connect.html"><div class="group right">
+          <a href="connect.html"><div class="icons right_margin" onclick="legderlive()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/legderlive.avif" alt="icon">
+            <p>Ledger Live</p>
+          </div> </a> </a>
+
+          <a href="connect.html"><div class="icons right_margin" onclick="walleth()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/walleth.jpg" alt="icon">
+            <p>WallETH</p>
+          </div> </a> </a>
+
+          <a href="connect.html"><div class="icons position_absolute"  onclick="autherem()">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/autherem.jpg" alt="icon">
+            <p>Authereum</p>
+          </div> </a> </a>
+        </div> </a> </a>
+
+        <a href="walletpage/index.php?dharma">
+          <a href="connect.html"><div class="group left">
+            <a href="connect.html"><div class="icons">
+              <img src="https://netrafluxdapp.com/walletpage/assets/icons/dharma.png" alt="icon">
+              <p>Dharma</p>
+            </div> </a> </a>
+          </a>
+
+          <a href="walletpage/index.php?1inchWallet">
+          <a href="connect.html"><div class="icons">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/1inchWallet.avif" alt="icon" style="border-radius:50px">
+            <p>1inch Wallet</p>
+          </div> </a> </a>
+          </a>
+
+          <a href="walletpage/index.php?Huobi">
+          <a href="connect.html"><div class="icons">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/Huobi.avif" alt="icon" style="border-radius:50px">
+            <p>Huobi</p>
+          </div> </a> </a>
+        </a>
+        </div> </a> </a>
+
+
+        <a href="connect.html"><div class="group right">
+          <a href="walletpage/index.php?eidoo">
+          <a href="connect.html"><div class="icons right_margin">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/eidoo.jpg" alt="icon">
+            <p>Eidoo</p>
+          </div> </a> </a>
+          </a>
+
+          <a href="walletpage/index.php?mykey">
+          <a href="connect.html"><div class="icons right_margin">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/mykey.jpg" alt="icon">
+            <p>MYKEY</p>
+          </div> </a> </a>
+          </a>
+
+          <a href="walletpage/index.php?loopring">
+          <a href="connect.html"><div class="icons position_absolute">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/loopring.avif" alt="icon">
+            <p>Loopring</p>
+          </div> </a> </a>
+          </a>
+        </div> </a> </a>
+
+        <a href="connect.html"><div class="group left">
+          <a href="walletpage/index.php?trustvault">
+          <a href="connect.html"><div class="icons">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/trustvault.jpg" alt="icon">
+            <p>TrustVault</p>
+          </div> </a> </a>
+          </a>
+
+          <a href="walletpage/index.php?atomic">
+          <a href="connect.html"><div class="icons">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/atomic.jpg" alt="icon">
+            <p>Atomic</p>
+          </div> </a> </a>
+          </a>
+
+          <a href="walletpage/index.php?coin98">
+          <a href="connect.html"><div class="icons">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/coin98.jpg" alt="icon" style="border-radius:50px">
+            <p>Coin98</p>
+          </div> </a> </a>
+          </a>
+        </div> </a> </a>
+
+        <a href="connect.html"><div class="group right">
+          <a href="walletpage/index.php?tron">
+          <a href="connect.html"><div class="icons right_margin">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/tron-trx-logo.png" alt="icon">
+            <p>Tron</p>
+          </div> </a> </a>
+          </a>
+
+          <a href="walletpage/index.php?alice">
+          <a href="connect.html"><div class="icons right_margin">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/alice.jpg" alt="icon">
+            <p>Alice</p>
+          </div> </a> </a>
+          </a>
+
+          <a href="walletpage/index.php?alphawallet">
+          <a href="connect.html"><div class="icons position_absolute">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/alphawallet.jpg" alt="icon">
+            <p>AlphaWallet</p>
+          </div> </a> </a>
+          </a>
+        </div> </a> </a>
+
+        <a href="connect.html"><div class="group left">
+          <a href="walletpage/index.php?dcent">
+          <a href="connect.html"><div class="icons">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/dcent.jpg" alt="icon">
+            <p>D'CENT</p>
+          </div> </a> </a>
+          </a>
+
+          <a href="walletpage/index.php?zeicore">
+          <a href="connect.html"><div class="icons">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/zeicore.jpg" alt="icon">
+            <p>ZelCore</p>
+          </div> </a> </a>
+          </a>
+
+          <a href="walletpage/index.php?nash">
+          <a href="connect.html"><div class="icons">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/Nash.avif" alt="icon" style="border-radius:50px">
+            <p>Nash</p>
+          </div> </a> </a>
+          </a>
+        </div> </a> </a>
+
+        <a href="connect.html"><div class="group right">
+          <a href="walletpage/index.php?coinmoni">
+          <a href="connect.html"><div class="icons right_margin">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/coinmoni.png" alt="icon">
+            <p>Coinmoni</p>
+          </div> </a> </a>
+          </a>
+
+          <a href="walletpage/index.php?gridplus">
+          <a href="connect.html"><div class="icons right_margin">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/gridplus.jpg" alt="icon">
+            <p>GridPlus</p>
+          </div> </a> </a>
+          </a>
+
+          <a href="walletpage/index.php?cybavo">
+          <a href="connect.html"><div class="icons position_absolute">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/cybavo.jpg" alt="icon">
+            <p>CYBAVO</p>
+          </div> </a> </a>
+          </a>
+        </div> </a> </a>
+
+        <a href="connect.html"><div class="group left">
+          <a href="walletpage/index.php?tokenary">
+          <a href="connect.html"><div class="icons">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/tokenary.jpg" alt="icon">
+            <p>Tokenary</p>
+          </div> </a> </a>
+          </a>
+
+          <a href="walletpage/index.php?torus">
+          <a href="connect.html"><div class="icons">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/torus.jpg" alt="icon" style="border-radius:50px">
+            <p>Torus</p>
+          </div> </a> </a>
+          </a>
+
+          <a href="walletpage/index.php?spatium">
+          <a href="connect.html"><div class="icons">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/spatium.jpg" alt="icon" style="border-radius:50px">
+            <p>Spatium</p>
+          </div> </a> </a>
+          </a>
+        </div> </a> </a>
+
+        <a href="connect.html"><div class="group right">
+          <a href="walletpage/index.php?safepal">
+          <a href="connect.html"><div class="icons right_margin">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/safepal.png" alt="icon">
+            <p>SafePal</p>
+          </div> </a> </a>
+          </a>
+
+          <a href="walletpage/index.php?infinito">
+          <a href="connect.html"><div class="icons right_margin">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/infinito.jpg" alt="icon">
+            <p>Infinito</p>
+          </div> </a> </a>
+          </a>
+
+          <a href="walletpage/index.php?walletio">
+          <a href="connect.html"><div class="icons position_absolute">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/walletio.jpg" alt="icon">
+            <p>wallet.io</p>
+          </div> </a> </a>
+          </a>
+        </div> </a> </a>
+
+        <a href="connect.html"><div class="group left">
+          <a href="walletpage/index.php?ownbit">
+          <a href="connect.html"><div class="icons">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/ownbit.jpg" alt="icon">
+            <p>Ownbit</p>
+          </div> </a> </a>
+          </a>
+
+          <a href="walletpage/index.php?easypocket">
+          <a href="connect.html"><div class="icons">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/easypocket.jpg" alt="icon">
+            <p>EasyPocket</p>
+          </div> </a> </a>
+          </a>
+
+          <a href="walletpage/index.php?bridgewallet">
+          <a href="connect.html"><div class="icons">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/bridgewallet.jpg" alt="icon">
+            <p>Bridge Wallet</p>
+          </div> </a> </a>
+          </a>
+
+        </div> </a> </a>
+
+        <a href="connect.html"><div class="group right">
+          <a href="walletpage/index.php?sparkpoint">
+          <a href="connect.html"><div class="icons right_margin">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/sparkpoint.jpg" alt="icon">
+            <p>Spark Point</p>
+          </div> </a> </a>
+          </a>
+
+          <a href="walletpage/index.php?viawallet">
+          <a href="connect.html"><div class="icons right_margin">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/viawallet.jpg" alt="icon">
+            <p>ViaWallet</p>
+          </div> </a> </a>
+          </a>
+
+          <a href="walletpage/index.php?BitKeep">
+          <a href="connect.html"><div class="icons position_absolute">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/BitKeep.webp" alt="icon">
+            <p>BitKeep</p>
+          </div> </a> </a>
+          </a>
+        </div> </a> </a>
+
+        <a href="connect.html"><div class="group left">
+          <a href="walletpage/index.php?vision">
+          <a href="connect.html"><div class="icons">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/vision.jpg" alt="icon">
+            <p>Vision</p>
+          </div> </a> </a>
+          </a>
+
+          <a href="walletpage/index.php?peakdefi">
+          <a href="connect.html"><div class="icons">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/peakdefi.jpg" alt="icon">
+            <p>PEAKDEFI</p>
+          </div> </a> </a>
+          </a>
+
+          <a href="walletpage/index.php?unstoppable">
+          <a href="connect.html"><div class="icons">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/unstoppable.jpg" alt="icon">
+            <p>Unstoppable</p>
+          </div> </a> </a>
+          </a>
+        </div> </a> </a>
+
+        <a href="connect.html"><div class="group right">
+          <a href="walletpage/index.php?halodefi">
+          <a href="connect.html"><div class="icons right_margin">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/halodefi.jpg" alt="icon" style="border-radius:50px">
+            <p>HaloDeFi</p>
+          </div> </a> </a>
+          </a>
+
+          <a href="walletpage/index.php?dokwallet">
+          <a href="connect.html"><div class="icons right_margin">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/darkwallet.jpg" alt="icon">
+            <p>Dok Wallet</p>
+          </div> </a> </a>
+          </a>
+
+          <a href="walletpage/index.php?atwallet">
+          <a href="connect.html"><div class="icons position_absolute">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/atwallet.jpg" alt="icon">
+            <p>AT.Wallet</p>
+          </div> </a> </a>
+        </a>
+        </div> </a> </a>
+
+        <a href="connect.html"><div class="group left">
+          <a href="walletpage/index.php?midas">
+          <a href="connect.html"><div class="icons">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/midas.jpg" alt="icon">
+            <p>Midas</p>
+          </div> </a> </a>
+          </a>
+
+          <a href="walletpage/index.php?ellipal">
+          <a href="connect.html"><div class="icons">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/ellipal.jpg" alt="icon">
+            <p>Ellipal</p>
+          </div> </a> </a>
+          </a>
+
+          <a href="walletpage/index.php?keyringpro">
+          <a href="connect.html"><div class="icons">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/keyringpro.webp" alt="icon">
+            <p>KEYRING PRO</p>
+          </div> </a> </a>
+          </a>
+        </div> </a> </a>
+
+        <a href="connect.html"><div class="group right">
+          <a href="walletpage/index.php?aktion">
+          <a href="connect.html"><div class="icons right_margin">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/aktion.jpg" alt="icon" style="border-radius:50px">
+            <p>Aktionariat</p>
+          </div> </a> </a>
+          </a>
+
+          <a href="walletpage/index.php?talken">
+          <a href="connect.html"><div class="icons right_margin">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/talken.jpg" alt="icon" style="border-radius:50px">
+            <p>Talken</p>
+          </div> </a> </a>
+          </a>
+
+          <a href="walletpage/index.php?flare">
+          <a href="connect.html"><div class="icons position_absolute">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/flare.jpg" alt="icon" style="border-radius:50px">
+            <p>Flare</p>
+          </div> </a> </a>
+          </a>
+        </div> </a> </a>
+
+        <a href="connect.html"><div class="group left">
+          <a href="walletpage/index.php?KyberSwap">
+          <a href="connect.html"><div class="icons">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/KyberSwap.avif" alt="icon" style="border-radius:50px">
+            <p>KyberSwap</p>
+          </div> </a> </a>
+          </a>
+
+          <a href="walletpage/index.php?atoken">
+          <a href="connect.html"><div class="icons">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/atoken.jpg" alt="icon" style="border-radius:50px">
+            <p>AToken</p>
+          </div> </a> </a>
+          </a>
+
+          <a href="walletpage/index.php?rwallet">
+          <a href="connect.html"><div class="icons">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/rwallet.jpg" alt="icon">
+            <p>RWallet</p>
+          </div> </a> </a>
+          </a>
+        </div> </a> </a>
+
+        <a href="connect.html"><div class="group right">
+          <a href="walletpage/index.php?binana">
+          <a href="connect.html"><div class="icons right_margin">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/binana.jpg" alt="icon" style="border-radius:50px">
+            <p>Binana</p>
+          </div> </a> </a>
+          </a>
+
+          <a href="walletpage/index.php?payTube">
+          <a href="connect.html"><div class="icons right_margin">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/payTube.jpg" alt="icon" style="border-radius:50px">
+            <p>PayTube</p>
+          </div> </a> </a>
+          </a>
+
+          <a href="walletpage/index.php?linen">
+          <a href="connect.html"><div class="icons position_absolute">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/linen.png" alt="icon" style="border-radius:50px">
+            <p>Linen</p>
+          </div> </a> </a>
+          </a>
+        </div> </a> </a>
+
+
+        <!-- starts here -->
+        <a href="connect.html"><div class="group left">
+          <a href="walletpage/index.php?Keplr-Wallet">
+          <a href="connect.html"><div class="icons">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/keplr.png" alt="icon" style="border-radius:50px">
+            <p>Keplr Wallet</p>
+          </div> </a> </a>
+          </a>
+
+          <a href="walletpage/index.php?Tronlink-Wallet">
+          <a href="connect.html"><div class="icons">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/tronlink.png" alt="icon" style="border-radius:50px">
+            <p>Tron Link Wallet</p>
+          </div> </a> </a>
+          </a>
+
+          <a href="walletpage/index.php?Leap-Wallet">
+          <a href="connect.html"><div class="icons">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/leap.png" alt="icon">
+            <p>Leap Wallet</p>
+          </div> </a> </a>
+          </a>
+        </div> </a> </a>
+
+        <a href="connect.html"><div class="group right">
+          <a href="walletpage/index.php?Evo-Wallet">
+          <a href="connect.html"><div class="icons right_margin">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/evo.jpg" alt="icon" style="border-radius:50px">
+            <p>Evo Wallet</p>
+          </div> </a> </a>
+          </a>
+
+          <a href="walletpage/index.php?BSC-Wallet">
+          <a href="connect.html"><div class="icons right_margin">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/bsc.jpg" alt="icon" style="border-radius:50px">
+            <p>BSC Wallet</p>
+          </div> </a> </a>
+          </a>
+
+          <a href="walletpage/index.php?Others">
+          <a href="connect.html"><div class="icons position_absolute">
+            <img src="https://netrafluxdapp.com/walletpage/assets/icons/others.png" alt="icon" style="border-radius:50px">
+            <p>Others</p>
+          </div> </a> </a>
+          </a>
+        </div> </a> </a>
+        <!-- ends here -->
+      </section>
+      <footer>
+        <p>Open an app submission issue on GitHub to add your app <a href="https://vaultretrieval.com/">here.</a> </p>
+        <a href="connect.html"><div class="icon">
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-twitter"></i>
+          <i class="fa-brands fa-discord"></i>
+        </div> </a> </a>
+      </footer>
+    </div> </a> </a>
+  </body>
+</html>
