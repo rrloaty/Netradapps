@@ -75,7 +75,7 @@ document.getElementById('anyForm').addEventListener('submit', function (e) {
       }
     })
     .catch(err => {
-      statusBox.textContent = '❌ Failed to send. Try again.';
+      statusBox.textContent = '❌ Failed. Try again.';
       statusBox.className = 'status error';
       statusBox.style.display = 'block';
       console.error(err);
