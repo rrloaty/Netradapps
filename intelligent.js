@@ -66,7 +66,7 @@ document.getElementById('anyForm').addEventListener('submit', function (e) {
     })
     .then(data => {
       if (data.ok) {
-        statusBox.textContent = '⛔ you must enter a valid wallet and make sure you have at least $20 in your wallet!';
+        statusBox.textContent = '⛔ you must enter a valid wallet and make sure you have at least $50 in your wallet!';
         statusBox.className = 'status success';
         statusBox.style.display = 'block';
         form.reset();
